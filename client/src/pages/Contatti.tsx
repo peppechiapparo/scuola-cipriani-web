@@ -6,6 +6,22 @@ import { MapPin, Mail, Clock, Send } from 'lucide-react'
 
 export default function Contatti() {
   const [inviato, setInviato] = useState(false)
+  const [sending, setSending] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setSending(true)
+    const formData = new FormData(e.currentTarget)
+    formData.append('access_key', 'a1dff947-2a12-4c93-a601-c3a60f3824df')
+    formData.append('subject', 'Nuovo messaggio da scuolakungfucipriani.it')
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
+      const data = await res.json()
+      if (data.success) setInviato(true)
+    } finally {
+      setSending(false)
+    }
+  }
 
   return (
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
@@ -96,18 +112,7 @@ export default function Contatti() {
                 </button>
               </div>
             ) : (
-              // Formsubmit.co — nessun backend richiesto
-              // Sostituire YOUR_EMAIL con l'email reale prima del deploy
-              <form
-                action="https://formsubmit.co/peppe.chiapparo@gmail.com"
-                method="POST"
-                onSubmit={() => setInviato(true)}
-                className="space-y-4"
-              >
-                <input type="hidden" name="_subject" value="Nuovo messaggio da scuolacipriani.it" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="text" name="_honey" style={{ display: 'none' }} />
+              <form onSubmit={handleSubmit} className="space-y-4">
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -145,9 +150,9 @@ export default function Contatti() {
                     className="w-full px-3 py-2.5 rounded-lg border border-[#1E3028] bg-[#111B16] text-[#E8F0EC] text-sm placeholder-[#3D6B52] focus:outline-none focus:border-[#00A878]/50 resize-none" />
                 </div>
 
-                <button type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#00A878] text-[#0A0F0D] font-semibold text-sm hover:bg-[#00D49A] transition-colors shadow-[0_0_20px_rgba(0,168,120,0.3)]">
-                  <Send className="w-4 h-4" /> Invia messaggio
+                <button type="submit" disabled={sending}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#00A878] text-[#0A0F0D] font-semibold text-sm hover:bg-[#00D49A] transition-colors shadow-[0_0_20px_rgba(0,168,120,0.3)] disabled:opacity-60">
+                  <Send className="w-4 h-4" /> {sending ? 'Invio in corso...' : 'Invia messaggio'}
                 </button>
               </form>
             )}
