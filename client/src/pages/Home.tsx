@@ -31,9 +31,17 @@ export default function Home() {
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background radial glow */}
-        <div className="absolute inset-0 hero-gradient" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#00A878]/5 blur-[120px] pointer-events-none" />
+        {/* Background photo con overlay scuro */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/ALLENAMENTO-VASANELLO-07-2025/IMG-20250824-WA0062.jpg"
+            alt=""
+            className="w-full h-full object-cover scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F0D]/75 via-[#0A0F0D]/65 to-[#0A0F0D]" />
+        </div>
+        <div className="absolute inset-0 bg-[#00A878]/3" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#00A878]/8 blur-[120px] pointer-events-none" />
 
         {/* Decorative Chinese character */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 text-[18rem] font-bold text-[#00A878]/5 select-none pointer-events-none hidden xl:block"
@@ -163,6 +171,31 @@ export default function Home() {
                 Tutti i corsi e gli orari <ChevronRight className="w-4 h-4" />
               </span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOTO BANNER ────────────────────────── */}
+      <section className="relative h-64 md:h-80 overflow-hidden">
+        <img
+          src="/images/ALLENAMENTO-VASANELLO-07-2025/IMG-20250824-WA0038.jpg"
+          alt="Allenamento Scuola della Montagna Shan"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F0D]/90 via-[#0A0F0D]/65 to-[#0A0F0D]/20" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-5xl mx-auto px-8 md:px-16 w-full">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <p className="text-xs font-semibold tracking-[0.3em] text-[#00A878] uppercase mb-3">La via delle arti marziali</p>
+              <blockquote
+                className="text-2xl md:text-4xl font-black text-[#E8F0EC] leading-snug"
+                style={{ fontFamily: 'Cinzel, serif' }}
+              >
+                “Il Kung Fu è una via,<br className="hidden md:block" />
+non una destinazione.”
+              </blockquote>
+              <p className="mt-4 text-sm text-[#6B9E84]">— Maestro Pietro Cipriani</p>
+            </motion.div>
           </div>
         </div>
       </section>
