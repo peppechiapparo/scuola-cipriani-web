@@ -65,7 +65,7 @@ export default function Prenotazioni() {
         ) : (
           <motion.form
             variants={fadeUp} initial="hidden" animate="visible" custom={1}
-            action="https://formsubmit.co/info@scuolacipriani.it"
+            action="https://formsubmit.co/peppe.chiapparo@gmail.com"
             method="POST"
             onSubmit={() => setInviato(true)}
             className="space-y-5"

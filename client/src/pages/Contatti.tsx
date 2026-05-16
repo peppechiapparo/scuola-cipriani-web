@@ -99,7 +99,7 @@ export default function Contatti() {
               // Formsubmit.co — nessun backend richiesto
               // Sostituire YOUR_EMAIL con l'email reale prima del deploy
               <form
-                action="https://formsubmit.co/info@scuolacipriani.it"
+                action="https://formsubmit.co/peppe.chiapparo@gmail.com"
                 method="POST"
                 onSubmit={() => setInviato(true)}
                 className="space-y-4"
