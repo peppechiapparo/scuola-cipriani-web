@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-jade: var(--jade);
+  --color-gold: var(--gold);
+}
+
+/* ── TEMA DARK JADE — Scuola Cipriani ────────────────────────── */
+:root {
+  color-scheme: dark;
+  --radius: 0.5rem;
+
+  /* Palette jade/oro */
+  --jade:   #00A878;
+  --jade-light: #00D49A;
+  --gold:   #D4AF37;
+  --gold-light: #F0D060;
+
+  /* Base */
+  --background: #0A0F0D;
+  --foreground:  #E8F0EC;
+
+  /* Surfaces */
+  --card:            #111B16;
+  --card-foreground: #E8F0EC;
+  --popover:         #111B16;
+  --popover-foreground: #E8F0EC;
+
+  /* Primary = jade */
+  --primary:            #00A878;
+  --primary-foreground: #0A0F0D;
+
+  /* Secondary */
+  --secondary:            #1A2820;
+  --secondary-foreground: #9DC4B0;
+
+  /* Muted */
+  --muted:            #1A2820;
+  --muted-foreground: #6B9E84;
+
+  /* Accent = gold */
+  --accent:            #1A2820;
+  --accent-foreground: #D4AF37;
+
+  /* Destructive */
+  --destructive:            #CF2929;
+  --destructive-foreground: #FFF;
+
+  /* Borders & inputs */
+  --border: #1E3028;
+  --input:  #1E3028;
+  --ring:   #00A878;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.03em;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--jade); border-radius: 3px; }
+
+/* Jade glow utility */
+.jade-glow {
+  box-shadow: 0 0 20px rgba(0, 168, 120, 0.3);
+}
+
+.gold-text {
+  color: var(--gold);
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: radial-gradient(ellipse at top, #0A2A1A 0%, #0A0F0D 60%);
+}
+
+/* Section divider */
+.section-divider {
+  border-color: var(--border);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 168, 120, 0.2);
+}
