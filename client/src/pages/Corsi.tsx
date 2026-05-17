@@ -118,88 +118,96 @@ export default function Corsi() {
             ))}
           </div>
 
-          {/* Discipline banner image */}
-          <motion.div
-            key={`${selected}-banner`}
-            initial={{ opacity: 0, scale: 1.03 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="relative h-56 md:h-72 rounded-2xl overflow-hidden mb-8"
-            style={{ border: `1px solid ${corso.colore}40` }}
-          >
-            <img
-              src={corso.foto}
-              alt={corso.nome}
-              className="w-full h-full object-cover object-top"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F0D] via-[#0A0F0D]/25 to-transparent" />
-            <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${corso.colore}18 0%, transparent 55%)` }} />
-          </motion.div>
-
-          {/* Corso detail */}
+          {/* Corso card — foto + dettaglio */}
           <motion.div
             key={selected}
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="grid md:grid-cols-2 gap-8"
+            transition={{ duration: 0.4 }}
+            className="rounded-2xl overflow-hidden"
+            style={{ border: `1px solid ${corso.colore}30` }}
           >
-            {/* Info */}
-            <div className="space-y-6">
-              <div className="flex items-start gap-5">
-                <div className="text-5xl">{corso.icon}</div>
+            {/* Photo header */}
+            <div className="relative h-64 md:h-[420px]">
+              <img
+                src={corso.foto}
+                alt={corso.nome}
+                className="w-full h-full object-cover object-center"
+              />
+              {/* Solo sfumatura in basso per raccordare col pannello */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1610] via-[#0D1610]/10 to-transparent" />
+              {/* Tinta disciplina nell'angolo */}
+              <div
+                className="absolute inset-0"
+                style={{ background: `linear-gradient(135deg, ${corso.colore}20 0%, transparent 45%)` }}
+              />
+              {/* Titolo sovrapposto in basso */}
+              <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                <span className="text-4xl drop-shadow-xl">{corso.icon}</span>
                 <div>
-                  <h2 className="text-2xl font-black text-[#E8F0EC]" style={{ fontFamily: 'Cinzel, serif' }}>{corso.nome}</h2>
-                  <p className="text-xs text-[#6B9E84] mt-1">{corso.livello}</p>
+                  <h2
+                    className="text-2xl md:text-3xl font-black text-white"
+                    style={{ fontFamily: 'Cinzel, serif', textShadow: '0 2px 16px rgba(0,0,0,0.9)' }}
+                  >
+                    {corso.nome}
+                  </h2>
+                  <p className="text-xs text-white/60 mt-0.5">{corso.livello}</p>
                 </div>
-              </div>
-              <p className="text-sm text-[#9DC4B0] leading-relaxed">{corso.descrizione}</p>
-
-              <div>
-                <h3 className="text-xs font-semibold text-[#00A878] tracking-[0.2em] uppercase mb-3">Benefici</h3>
-                <ul className="space-y-2">
-                  {corso.benefici.map((b, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-[#9DC4B0]">
-                      <ChevronRight className="w-3 h-3 text-[#00A878] flex-shrink-0" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="p-4 rounded-lg border border-[#1E3028] bg-[#111B16] text-sm text-[#9DC4B0]">
-                <strong className="text-[#D4AF37]">Staff:</strong> {corso.maestro}
               </div>
             </div>
 
-            {/* Orari */}
-            <div>
-              <h3 className="text-xs font-semibold text-[#00A878] tracking-[0.2em] uppercase mb-4">Orario delle Lezioni</h3>
-              <div className="space-y-3">
-                {corso.orari.map((o, i) => (
-                  <div key={i} className="p-5 rounded-xl border border-[#1E3028] bg-[#111B16]">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[#E8F0EC] mb-2">
-                      <Clock className="w-4 h-4 text-[#00A878]" />
-                      {o.giorni}
-                    </div>
-                    <div className="text-2xl font-black text-[#00A878] mb-1">{o.ora}</div>
-                    <div className="text-xs text-[#6B9E84]">{o.livello}</div>
-                  </div>
-                ))}
+            {/* Content */}
+            <div className="grid md:grid-cols-2 gap-8 p-8 bg-[#0D1610]">
+              {/* Info */}
+              <div className="space-y-6">
+                <p className="text-sm text-[#9DC4B0] leading-relaxed">{corso.descrizione}</p>
 
-                <div className="p-4 rounded-lg border border-[#1E3028] bg-[#111B16] flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-[#00A878] flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-[#9DC4B0]">
-                    <strong className="text-[#E8F0EC]">Sede:</strong><br />
-                    Strada Tuscanese 107/g<br />Viterbo (VT) — Lazio
-                  </div>
+                <div>
+                  <h3 className="text-xs font-semibold text-[#00A878] tracking-[0.2em] uppercase mb-3">Benefici</h3>
+                  <ul className="space-y-2">
+                    {corso.benefici.map((b, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-[#9DC4B0]">
+                        <ChevronRight className="w-3 h-3 text-[#00A878] flex-shrink-0" />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <Link href="/prenotazioni">
-                  <span className="block mt-4 w-full text-center px-6 py-3 rounded-lg bg-[#00A878] text-[#0A0F0D] font-semibold text-sm hover:bg-[#00D49A] transition-colors cursor-pointer shadow-[0_0_20px_rgba(0,168,120,0.3)]">
-                    Prenota una Lezione Gratuita
-                  </span>
-                </Link>
+                <div className="p-4 rounded-lg border border-[#1E3028] bg-[#111B16] text-sm text-[#9DC4B0]">
+                  <strong className="text-[#D4AF37]">Staff:</strong> {corso.maestro}
+                </div>
+              </div>
+
+              {/* Orari */}
+              <div>
+                <h3 className="text-xs font-semibold text-[#00A878] tracking-[0.2em] uppercase mb-4">Orario delle Lezioni</h3>
+                <div className="space-y-3">
+                  {corso.orari.map((o, i) => (
+                    <div key={i} className="p-5 rounded-xl border border-[#1E3028] bg-[#111B16]">
+                      <div className="flex items-center gap-2 text-sm font-semibold text-[#E8F0EC] mb-2">
+                        <Clock className="w-4 h-4 text-[#00A878]" />
+                        {o.giorni}
+                      </div>
+                      <div className="text-2xl font-black text-[#00A878] mb-1">{o.ora}</div>
+                      <div className="text-xs text-[#6B9E84]">{o.livello}</div>
+                    </div>
+                  ))}
+
+                  <div className="p-4 rounded-lg border border-[#1E3028] bg-[#111B16] flex items-start gap-3">
+                    <MapPin className="w-4 h-4 text-[#00A878] flex-shrink-0 mt-0.5" />
+                    <div className="text-sm text-[#9DC4B0]">
+                      <strong className="text-[#E8F0EC]">Sede:</strong><br />
+                      Strada Tuscanese 107/g<br />Viterbo (VT) — Lazio
+                    </div>
+                  </div>
+
+                  <Link href="/prenotazioni">
+                    <span className="block mt-4 w-full text-center px-6 py-3 rounded-lg bg-[#00A878] text-[#0A0F0D] font-semibold text-sm hover:bg-[#00D49A] transition-colors cursor-pointer shadow-[0_0_20px_rgba(0,168,120,0.3)]">
+                      Prenota una Lezione Gratuita
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
           </motion.div>
