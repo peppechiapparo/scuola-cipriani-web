@@ -34,6 +34,12 @@ export default function Biografia() {
 
       {/* Hero */}
       <section className="py-20 text-center px-4 border-b border-[#1E3028] relative overflow-hidden">
+        <img
+          src="/images/disciplines/ScuolaCipriani.jpeg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-top opacity-[0.08] pointer-events-none select-none"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F0D]/50 to-[#0A0F0D] pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#D4AF37]/5 blur-[100px] pointer-events-none" />
         <motion.div variants={fadeUp} initial="hidden" animate="visible" className="relative z-10">
           <span className="text-xs font-semibold tracking-[0.3em] text-[#D4AF37] uppercase">Il Fondatore</span>
@@ -94,6 +100,28 @@ export default function Biografia() {
           </div>
         </section>
 
+        {/* Photo strip — storia */}
+        <motion.section
+          variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+          className="relative h-60 md:h-80 rounded-2xl overflow-hidden"
+        >
+          <img
+            src="/images/disciplines/ScuolaCipriani_vecchiallievi.jpeg"
+            alt="Vecchi allievi della Scuola della Montagna Shan"
+            className="w-full h-full object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F0D]/90 via-[#0A0F0D]/50 to-transparent" />
+          <div className="absolute inset-0 flex items-center px-8 md:px-12">
+            <div className="max-w-xs">
+              <span className="text-xs font-semibold tracking-[0.3em] text-[#D4AF37] uppercase">50 anni di storia</span>
+              <p className="text-xl md:text-2xl font-black text-[#E8F0EC] mt-3 leading-snug" style={{ fontFamily: 'Cinzel, serif' }}>
+                &ldquo;Le arti marziali sono una via,<br />non una destinazione.&rdquo;
+              </p>
+              <p className="text-sm text-[#00A878] mt-4">— M° Pietro Cipriani</p>
+            </div>
+          </div>
+        </motion.section>
+
         {/* Ruoli */}
         <section>
           <motion.h2 variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -115,24 +143,38 @@ export default function Biografia() {
         </section>
 
         {/* Kris */}
-        <section className="p-8 rounded-2xl border border-[#1E3028] bg-[#111B16]">
-          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="flex items-start gap-5">
-            <div className="text-4xl flex-shrink-0">👨‍👦</div>
-            <div>
-              <span className="text-xs font-semibold tracking-[0.2em] text-[#00A878] uppercase">La Continuità</span>
-              <h3 className="text-xl font-black text-[#E8F0EC] mt-1 mb-3" style={{ fontFamily: 'Cinzel, serif' }}>
-                Kris Cipriani — La Nuova Generazione
-              </h3>
-              <p className="text-sm text-[#9DC4B0] leading-relaxed">
-                Il figlio del Maestro, <strong className="text-[#E8F0EC]">Kris Cipriani</strong> (classe 1988),
-                è a sua volta Maestro con un solido percorso agonistico in Kung Fu/Sanda e Judo.
-                La continuità della famiglia Cipriani rappresenta un impegno verso le generazioni future
-                e verso la preservazione dell'eccellenza tecnica e filosofica delle arti marziali nella Tuscia.
-              </p>
+        <motion.section
+          variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+          className="rounded-2xl overflow-hidden border border-[#1E3028]"
+        >
+          <div className="md:flex">
+            <div className="p-8 md:flex-1">
+              <div className="flex items-start gap-5">
+                <div className="text-4xl flex-shrink-0">👨‍👦</div>
+                <div>
+                  <span className="text-xs font-semibold tracking-[0.2em] text-[#00A878] uppercase">La Continuità</span>
+                  <h3 className="text-xl font-black text-[#E8F0EC] mt-1 mb-3" style={{ fontFamily: 'Cinzel, serif' }}>
+                    Kris Cipriani — La Nuova Generazione
+                  </h3>
+                  <p className="text-sm text-[#9DC4B0] leading-relaxed">
+                    Il figlio del Maestro, <strong className="text-[#E8F0EC]">Kris Cipriani</strong> (classe 1988),
+                    è a sua volta Maestro con un solido percorso agonistico in Kung Fu/Sanda e Judo.
+                    La continuità della famiglia Cipriani rappresenta un impegno verso le generazioni future
+                    e verso la preservazione dell&apos;eccellenza tecnica e filosofica delle arti marziali nella Tuscia.
+                  </p>
+                </div>
+              </div>
             </div>
-          </motion.div>
-        </section>
+            <div className="hidden md:block md:w-2/5 relative min-h-[220px]">
+              <img
+                src="/images/disciplines/MAESTROCIPRIANIconLAMOGLIE.jpeg"
+                alt="Maestro Pietro Cipriani"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#111B16] via-[#111B16]/30 to-transparent" />
+            </div>
+          </div>
+        </motion.section>
 
       </div>
     </div>

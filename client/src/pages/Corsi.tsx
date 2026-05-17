@@ -8,6 +8,7 @@ import { Link } from 'wouter'
 const CORSI = [
   {
     id: 'karate',
+    foto: '/images/disciplines/ScuolaCipriani_KARATE.jpeg',
     icon: '🥋',
     nome: 'Karate Wado Ryu',
     livello: 'Tutti i livelli · Bambini e Adulti',
@@ -22,6 +23,7 @@ const CORSI = [
   },
   {
     id: 'kungfu',
+    foto: '/images/disciplines/ScuolaCipriani_kungfu.jpeg',
     icon: '🐉',
     nome: 'Kung Fu Wushu',
     livello: 'Tutti i livelli · Bambini e Adulti',
@@ -35,6 +37,7 @@ const CORSI = [
   },
   {
     id: 'taichi',
+    foto: '/images/disciplines/ScuolaCipriani_taichi.jpeg',
     icon: '☯️',
     nome: 'Tai Chi Quan',
     livello: 'Tutti i livelli · Adulti',
@@ -48,6 +51,7 @@ const CORSI = [
   },
   {
     id: 'kurash',
+    foto: '/images/disciplines/ScuolaCipriani_KURASH.jpeg',
     icon: '🤼',
     nome: 'Kurash',
     livello: 'Principianti e Avanzati',
@@ -61,6 +65,7 @@ const CORSI = [
   },
   {
     id: 'kontact',
+    foto: '/images/disciplines/ScuolaCipriani_KARATE.jpeg',
     icon: '🥊',
     nome: 'Kontact',
     livello: 'Tutti i livelli',
@@ -112,6 +117,24 @@ export default function Corsi() {
               </button>
             ))}
           </div>
+
+          {/* Discipline banner image */}
+          <motion.div
+            key={`${selected}-banner`}
+            initial={{ opacity: 0, scale: 1.03 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="relative h-56 md:h-72 rounded-2xl overflow-hidden mb-8"
+            style={{ border: `1px solid ${corso.colore}40` }}
+          >
+            <img
+              src={corso.foto}
+              alt={corso.nome}
+              className="w-full h-full object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F0D] via-[#0A0F0D]/25 to-transparent" />
+            <div className="absolute inset-0" style={{ background: `linear-gradient(135deg, ${corso.colore}18 0%, transparent 55%)` }} />
+          </motion.div>
 
           {/* Corso detail */}
           <motion.div
