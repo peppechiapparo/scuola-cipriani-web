@@ -1,4 +1,5 @@
 import { fadeUp } from '@/lib/animations'
+import SEOHead from '@/components/SEOHead'
 import { motion } from 'framer-motion'
 import { Link } from 'wouter'
 import { Award, Users, Clock, ChevronRight, Shield, Zap, Heart } from 'lucide-react'
@@ -37,6 +38,11 @@ export default function Home() {
 
   return (
     <div className="bg-[#0A0F0D] min-h-screen">
+      <SEOHead
+        title="Kung Fu · Karate · Tai Chi · Kurash a Viterbo"
+        description="Scuola di arti marziali tradizionali a Viterbo dal 1970. Kung Fu Wushu, Karate Wado Ryu, Tai Chi Chuan, Kurash. Maestro Pietro Cipriani — Cintura Oro 6° Duan. Prima lezione gratuita."
+        path="/"
+      />
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

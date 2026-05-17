@@ -1,4 +1,5 @@
 import { fadeUp } from '@/lib/animations'
+import SEOHead from '@/components/SEOHead'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Trophy, Search } from 'lucide-react'
@@ -71,6 +72,12 @@ export default function AlboOro() {
 
   return (
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
+      <SEOHead
+        title="Albo d'Oro — Tecnici Qualificati dalla Scuola Shan"
+        description="L'Albo d'Oro della Scuola della Montagna Shan: tecnici qualificati in Kung Fu Wushu, Tai Chi Quan e Shuai Jiao formati dal Maestro Pietro Cipriani a Viterbo e in tutta Italia."
+        path="/albo-oro"
+        image="/images/disciplines/ScuolaCipriani_vecchiallievi.jpeg"
+      />
 
       {/* Hero */}
       <section className="relative h-64 md:h-[380px] overflow-hidden border-b border-[#1E3028]">

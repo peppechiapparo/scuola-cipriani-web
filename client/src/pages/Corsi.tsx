@@ -1,4 +1,5 @@
 import { fadeUp } from '@/lib/animations'
+import SEOHead from '@/components/SEOHead'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Clock, MapPin, ChevronRight } from 'lucide-react'
@@ -85,6 +86,12 @@ export default function Corsi() {
 
   return (
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
+      <SEOHead
+        title="I Nostri Corsi — Kung Fu, Karate, Tai Chi, Kurash"
+        description="Corsi di Kung Fu Wushu, Karate Wado Ryu, Tai Chi Chuan, Kurash e Kontact a Viterbo. Orari, livelli e iscrizioni — Scuola della Montagna Shan."
+        path="/corsi"
+        image="/images/disciplines/ScuolaCipriani_KARATE.jpeg"
+      />
 
       {/* Hero */}
       <section className="py-20 text-center px-4 border-b border-[#1E3028]">

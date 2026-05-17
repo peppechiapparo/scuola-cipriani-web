@@ -1,4 +1,5 @@
 import { fadeUp } from '@/lib/animations'
+import SEOHead from '@/components/SEOHead'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Mail, Clock, Send, ExternalLink } from 'lucide-react'
@@ -32,6 +33,11 @@ export default function Contatti() {
 
   return (
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
+      <SEOHead
+        title="Contatti e Sede"
+        description="Contatta la Scuola della Montagna Shan — Strada Tuscanese 107/g, Viterbo (VT). Orari, telefono, email e mappa. Prima lezione gratuita su appuntamento."
+        path="/contatti"
+      />
 
       {/* Hero */}
       <section className="py-14 text-center px-4">

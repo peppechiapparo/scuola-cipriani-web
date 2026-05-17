@@ -1,4 +1,5 @@
 import { fadeUp } from '@/lib/animations'
+import SEOHead from '@/components/SEOHead'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, CheckCircle } from 'lucide-react'
@@ -29,6 +30,11 @@ export default function Prenotazioni() {
 
   return (
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
+      <SEOHead
+        title="Prenota una Lezione Gratuita"
+        description="Prenota subito una lezione di prova gratuita presso la Scuola della Montagna Shan di Viterbo. Kung Fu, Karate, Tai Chi, Kurash — tutte le età e livelli."
+        path="/prenotazioni"
+      />
 
       {/* Hero */}
       <section className="py-20 text-center px-4 border-b border-[#1E3028] relative overflow-hidden">

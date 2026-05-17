@@ -1,3 +1,13 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.scuolacipriani.it/sitemap.xml
+Sitemap: https://scuolakungfucipriani.it/sitemap.xml
+
+# AI crawler access (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

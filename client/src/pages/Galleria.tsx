@@ -1,4 +1,5 @@
 import { fadeUp } from '@/lib/animations'
+import SEOHead from '@/components/SEOHead'
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Camera, ChevronLeft, ChevronRight, X, Calendar, MapPin, Images } from 'lucide-react'
@@ -100,6 +101,11 @@ export default function Galleria() {
 
   return (
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
+      <SEOHead
+        title="Galleria Fotografica"
+        description="Galleria fotografica della Scuola della Montagna Shan — allenamenti, gare e eventi di Kung Fu, Karate e Kurash a Viterbo e in Italia."
+        path="/galleria"
+      />
 
       {/* Hero */}
       <section className="py-20 text-center px-4 border-b border-[#1E3028]">

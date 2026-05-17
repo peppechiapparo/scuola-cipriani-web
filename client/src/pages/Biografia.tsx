@@ -1,4 +1,5 @@
 import { fadeUp } from '@/lib/animations'
+import SEOHead from '@/components/SEOHead'
 import { motion } from 'framer-motion'
 import { Award, Star, Globe, Users } from 'lucide-react'
 
@@ -31,6 +32,12 @@ const TIMELINE = [
 export default function Biografia() {
   return (
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
+      <SEOHead
+        title="Maestro Pietro Cipriani — Fondatore e Direttore Tecnico"
+        description="Maestro Pietro Cipriani, 7° Duan Wu-Shu Kung Fu, fondatore della Scuola della Montagna Shan di Viterbo. Oltre 50 anni di dedizione alle arti marziali tradizionali."
+        path="/biografia"
+        image="/images/disciplines/MAESTROCIPRIANIconLAMOGLIE.jpeg"
+      />
 
       {/* Hero */}
       <section className="relative h-72 md:h-[460px] overflow-hidden border-b border-[#1E3028]">

@@ -1,4 +1,5 @@
 import { fadeUp } from '@/lib/animations'
+import SEOHead from '@/components/SEOHead'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, ChevronRight, ArrowLeft } from 'lucide-react'
@@ -96,6 +97,11 @@ export default function News() {
   if (selected) {
     return (
       <div className="bg-[#0A0F0D] min-h-screen pt-20">
+        <SEOHead
+          title={selected.titolo}
+          description={selected.sommario}
+          path="/news"
+        />
         <div className="max-w-3xl mx-auto px-4 py-12">
           <button onClick={() => setSelected(null)}
             className="flex items-center gap-2 text-sm text-[#6B9E84] hover:text-[#00A878] transition-colors mb-8">
@@ -126,6 +132,11 @@ export default function News() {
 
   return (
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
+      <SEOHead
+        title="News — Gare, Eventi e Aggiornamenti"
+        description="Notizie, risultati di gara e aggiornamenti della Scuola della Montagna Shan di Viterbo. Campionati, nuovi corsi, eventi di Kung Fu e Karate."
+        path="/news"
+      />
 
       {/* Hero */}
       <section className="relative h-64 md:h-[380px] overflow-hidden border-b border-[#1E3028]">
