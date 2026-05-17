@@ -73,17 +73,29 @@ export default function AlboOro() {
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
 
       {/* Hero */}
-      <section className="py-20 text-center px-4 border-b border-[#1E3028] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-[#D4AF37]/5 blur-[80px] pointer-events-none" />
-        <motion.div variants={fadeUp} initial="hidden" animate="visible" className="relative z-10">
-          <Trophy className="w-12 h-12 text-[#D4AF37] mx-auto mb-4" />
-          <span className="text-xs font-semibold tracking-[0.3em] text-[#D4AF37] uppercase">Comitato Provinciale US ACLI · Viterbo</span>
-          <h1 className="text-4xl md:text-6xl font-black mt-2 text-[#E8F0EC]" style={{ fontFamily: 'Cinzel, serif' }}>
-            Albo d'Oro
+      <section className="relative h-64 md:h-[380px] overflow-hidden border-b border-[#1E3028]">
+        <img
+          src="/images/disciplines/ScuolaCipriani_vecchiallievi.jpeg"
+          alt="Albo d'Oro — Scuola della Montagna Shan"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F0D] via-[#0A0F0D]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F0D]/60 via-transparent to-transparent" />
+        <motion.div variants={fadeUp} initial="hidden" animate="visible"
+          className="absolute bottom-8 left-8 md:bottom-10 md:left-12 z-10 flex items-end gap-4">
+          <Trophy className="w-10 h-10 text-[#D4AF37] drop-shadow-xl flex-shrink-0 mb-1" />
+          <div>
+          <span className="text-xs font-semibold tracking-[0.3em] text-[#D4AF37] uppercase"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}>Comitato Provinciale US ACLI · Viterbo</span>
+          <h1 className="text-3xl md:text-5xl font-black mt-1 text-white"
+            style={{ fontFamily: 'Cinzel, serif', textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
+            Albo d&apos;Oro
           </h1>
-          <p className="text-[#6B9E84] mt-4 max-w-lg mx-auto">
+          <p className="text-sm text-white/70 mt-2"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}>
             I tecnici qualificati formati dalla Scuola della Montagna Shan nel corso dei decenni.
           </p>
+          </div>
         </motion.div>
       </section>
 

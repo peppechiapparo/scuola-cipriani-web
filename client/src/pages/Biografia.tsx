@@ -33,20 +33,23 @@ export default function Biografia() {
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
 
       {/* Hero */}
-      <section className="py-20 text-center px-4 border-b border-[#1E3028] relative overflow-hidden">
+      <section className="relative h-72 md:h-[460px] overflow-hidden border-b border-[#1E3028]">
         <img
-          src="/images/disciplines/ScuolaCipriani.jpeg"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover object-top opacity-[0.08] pointer-events-none select-none"
+          src="/images/disciplines/MAESTROCIPRIANIconLAMOGLIE.jpeg"
+          alt="Maestro Pietro Cipriani"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F0D]/50 to-[#0A0F0D] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#D4AF37]/5 blur-[100px] pointer-events-none" />
-        <motion.div variants={fadeUp} initial="hidden" animate="visible" className="relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F0D] via-[#0A0F0D]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F0D]/60 via-transparent to-transparent" />
+        <motion.div variants={fadeUp} initial="hidden" animate="visible"
+          className="absolute bottom-8 left-8 md:bottom-12 md:left-12 z-10">
           <span className="text-xs font-semibold tracking-[0.3em] text-[#D4AF37] uppercase">Il Fondatore</span>
-          <h1 className="text-4xl md:text-6xl font-black mt-2 text-[#E8F0EC]" style={{ fontFamily: 'Cinzel, serif' }}>
+          <h1 className="text-3xl md:text-5xl font-black mt-2 text-white"
+            style={{ fontFamily: 'Cinzel, serif', textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
             Maestro Pietro Cipriani
           </h1>
-          <p className="text-[#6B9E84] mt-4 max-w-xl mx-auto">
+          <p className="text-sm text-white/70 mt-3 max-w-xl"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}>
             7° Duan Wu-Shu Kung Fu · Già Coordinatore Nazionale Us Acli · Oltre 50 anni di dedizione alle arti marziali tradizionali
           </p>
         </motion.div>

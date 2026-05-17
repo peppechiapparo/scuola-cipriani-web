@@ -128,13 +128,24 @@ export default function News() {
     <div className="bg-[#0A0F0D] min-h-screen pt-20">
 
       {/* Hero */}
-      <section className="py-20 text-center px-4 border-b border-[#1E3028]">
-        <motion.div variants={fadeUp} initial="hidden" animate="visible">
-          <span className="text-xs font-semibold tracking-[0.3em] text-[#00A878] uppercase">Aggiornamenti</span>
-          <h1 className="text-4xl md:text-5xl font-black mt-2 text-[#E8F0EC]" style={{ fontFamily: 'Cinzel, serif' }}>
+      <section className="relative h-64 md:h-[380px] overflow-hidden border-b border-[#1E3028]">
+        <img
+          src="/images/disciplines/ScuolaCipriani.jpeg"
+          alt="News — Scuola della Montagna Shan"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F0D] via-[#0A0F0D]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F0D]/50 via-transparent to-transparent" />
+        <motion.div variants={fadeUp} initial="hidden" animate="visible"
+          className="absolute bottom-8 left-8 md:bottom-10 md:left-12 z-10">
+          <span className="text-xs font-semibold tracking-[0.3em] text-[#00A878] uppercase"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}>Aggiornamenti</span>
+          <h1 className="text-3xl md:text-5xl font-black mt-1 text-white"
+            style={{ fontFamily: 'Cinzel, serif', textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
             News
           </h1>
-          <p className="text-[#6B9E84] mt-4">
+          <p className="text-sm text-white/70 mt-2"
+            style={{ textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}>
             Notizie, eventi e risultati della Scuola della Montagna Shan
           </p>
         </motion.div>
