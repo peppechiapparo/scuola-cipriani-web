@@ -18,7 +18,7 @@ const CORSI = [
       { giorni: 'Lunedì · Mercoledì', ora: '18:00 – 19:30', livello: 'Adulti' },
       { giorni: 'Martedì · Giovedì', ora: '17:00 – 18:00', livello: 'Bambini (6-12 anni)' },
     ],
-    maestro: 'Maestro Pietro Cipriani — 3° Dan',
+    maestro: 'Maestro Pietro Cipriani — 4° Dan',
   },
   {
     id: 'kungfu',
@@ -26,12 +26,12 @@ const CORSI = [
     nome: 'Kung Fu Wushu',
     livello: 'Tutti i livelli · Bambini e Adulti',
     colore: '#00A878',
-    descrizione: 'L\'arte marziale cinese per eccellenza. Forme tradizionali, lavoro con armi, tecniche di combattimento. La Scuola della Montagna "Shan" rappresenta la fusione tra agonismo e tradizione del Kung Fu.',
-    benefici: ['Flessibilità e agilità', 'Forza e resistenza', 'Concentrazione', 'Armi tradizionali', 'Filosofia orientale'],
+    descrizione: 'L\'arte marziale cinese per eccellenza. Oltre alle forme tradizionali e al lavoro con le armi, il programma comprende Shuai Jiao (Lotta Cinese), Sanda e combattimento moderno, ed elementi di stili antichi e moderni. La Scuola della Montagna "Shan" unisce agonismo e tradizione millenaria.',
+    benefici: ['Forme tradizionali e armi', 'Shuai Jiao — Lotta Cinese', 'Sanda e combattimento moderno', 'Stili antichi e moderni', 'Filosofia e tradizione orientale'],
     orari: [
       { giorni: 'Martedì · Giovedì', ora: '18:00 – 19:30', livello: 'Tutti i livelli' },
     ],
-    maestro: 'Maestro Pietro Cipriani — Cintura Oro 6° Duan',
+    maestro: 'Dir. Tecnico: M° Pietro Cipriani — 7° Duan · Kung Fu con M° Duranti Giovanni — 5° Duan',
   },
   {
     id: 'taichi',
@@ -39,12 +39,12 @@ const CORSI = [
     nome: 'Tai Chi Quan',
     livello: 'Tutti i livelli · Adulti',
     colore: '#9DC4B0',
-    descrizione: 'Arte marziale interna cinese basata su movimenti lenti e fluidi. Pratichiamo la forma dei 24 movimenti, la forma "108" e le forme Shan tradizionali create dal Maestro Cipriani.',
-    benefici: ['Riduzione dello stress', 'Equilibrio e postura', 'Consapevolezza corporea', 'Benefici cardiovascolari', 'Armonia corpo-mente'],
+    descrizione: 'Arte marziale interna cinese basata su movimenti lenti e fluidi. Pratichiamo le forme Shan — tracciati e movimenti caratteristici della scuola trasmessi esclusivamente agli allievi di questo stile — la forma Yang e la forma dei 24 movimenti.',
+    benefici: ['Riduzione dello stress', 'Equilibrio e postura', 'Forme Shan della scuola', 'Forma Yang e forma 24', 'Armonia corpo-mente'],
     orari: [
       { giorni: 'Martedì · Giovedì', ora: '18:00 – 19:30', livello: 'Tutti i livelli' },
     ],
-    maestro: 'Maestro Pietro Cipriani',
+    maestro: 'M° Pietro Cipriani · M° Duranti Giovanni — 5° Duan',
   },
   {
     id: 'kurash',
@@ -57,7 +57,7 @@ const CORSI = [
     orari: [
       { giorni: 'Venerdì', ora: '19:00 – 20:30', livello: 'Tutti i livelli' },
     ],
-    maestro: 'Maestro Pietro Cipriani',
+    maestro: 'Istr. Minella Emanuele · Istr. Chiapparo Giuseppe',
   },
   {
     id: 'kontact',
@@ -145,7 +145,7 @@ export default function Corsi() {
               </div>
 
               <div className="p-4 rounded-lg border border-[#1E3028] bg-[#111B16] text-sm text-[#9DC4B0]">
-                <strong className="text-[#D4AF37]">Istruttore:</strong> {corso.maestro}
+                <strong className="text-[#D4AF37]">Staff:</strong> {corso.maestro}
               </div>
             </div>
 
@@ -180,6 +180,34 @@ export default function Corsi() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── STAFF DOCENTE ──────────────────── */}
+      <section className="py-14 px-4 border-t border-[#1E3028]">
+        <div className="max-w-6xl mx-auto">
+          <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="text-center mb-10">
+            <span className="text-xs font-semibold tracking-[0.3em] text-[#00A878] uppercase">Il nostro team</span>
+            <h2 className="text-2xl font-black mt-2 text-[#E8F0EC]" style={{ fontFamily: 'Cinzel, serif' }}>Staff Docente</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { ruolo: 'Direttore Tecnico', nome: 'M° Pietro Cipriani', dettaglio: '7° Duan Wu-Shu Kung Fu · 4° Dan Karate · Maestro Tai Chi Chuan · Kurash 1 stella' },
+              { ruolo: 'Kung Fu · Tai Chi', nome: 'M° Duranti Giovanni', dettaglio: '5° Duan Wu-Shu Kung Fu' },
+              { ruolo: 'Coordinatore dei Corsi', nome: 'M° Ferrazzani Federico', dettaglio: '' },
+              { ruolo: 'Kurash · Lotta Cinese', nome: 'Istr. Minella Emanuele', dettaglio: 'Istruttore certificato' },
+              { ruolo: 'Kurash · Lotta Cinese', nome: 'Istr. Chiapparo Giuseppe', dettaglio: 'Istruttore certificato' },
+            ].map((p, i) => (
+              <motion.div key={i}
+                variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+                className="p-5 rounded-xl border border-[#1E3028] bg-[#111B16]">
+                <p className="text-xs font-semibold text-[#00A878] uppercase tracking-wider mb-2">{p.ruolo}</p>
+                <p className="text-sm font-bold text-[#E8F0EC]">{p.nome}</p>
+                {p.dettaglio && <p className="text-xs text-[#6B9E84] mt-1 leading-relaxed">{p.dettaglio}</p>}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

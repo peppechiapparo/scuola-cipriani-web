@@ -4,13 +4,14 @@ import { Award, Star, Globe, Users } from 'lucide-react'
 
 
 const QUALIFICHE = [
-  { titolo: 'Kung Fu Wushu', grado: 'Cintura Oro · 6° Duan', icon: '🐉' },
-  { titolo: 'Karate Wado Ryu', grado: '3° Dan', icon: '🥋' },
-  { titolo: 'Tai Chi Quan', grado: 'Maestro — forme 24, 108, Shan', icon: '☯️' },
-  { titolo: 'Kurash', grado: 'Istruttore Certificato', icon: '🤼' },
+  { titolo: 'Wu-Shu Kung Fu', grado: '7° Duan', icon: '🐉' },
+  { titolo: 'Karate Wado Ryu', grado: 'Maestro · 4° Dan', icon: '🥋' },
+  { titolo: 'Tai Chi Chuan', grado: 'Maestro — forme Shan, Yang e 24', icon: '☯️' },
+  { titolo: 'Kurash', grado: 'Maestro 1 stella', icon: '🤼' },
 ]
 
 const RUOLI = [
+  { ruolo: 'Già Coordinatore Nazionale Us Acli', periodo: 'In attività' },
   { ruolo: 'Formatore della Nazionale Italiana Karate', periodo: 'Anni \'80–\'90' },
   { ruolo: 'Preparatore atletico istruttori nazionali', periodo: 'Anni \'80–\'90' },
   { ruolo: 'Fondatore Scuola della Montagna "Shan"', periodo: 'Viterbo, Lazio' },
@@ -40,7 +41,7 @@ export default function Biografia() {
             Maestro Pietro Cipriani
           </h1>
           <p className="text-[#6B9E84] mt-4 max-w-xl mx-auto">
-            Cintura Oro 6° Duan · Oltre 50 anni di dedizione alle arti marziali tradizionali
+            7° Duan Wu-Shu Kung Fu · Già Coordinatore Nazionale Us Acli · Oltre 50 anni di dedizione alle arti marziali tradizionali
           </p>
         </motion.div>
       </section>

@@ -2,6 +2,7 @@ import { fadeUp } from '@/lib/animations'
 import { motion } from 'framer-motion'
 import { Link } from 'wouter'
 import { Award, Users, Clock, ChevronRight, Shield, Zap, Heart } from 'lucide-react'
+import { useRef, useEffect } from 'react'
 
 
 const STATS = [
@@ -26,19 +27,31 @@ const VALORI = [
 ]
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5
+    }
+  }, [])
+
   return (
     <div className="bg-[#0A0F0D] min-h-screen">
 
       {/* ── HERO ─────────────────────────────────── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background photo con overlay scuro */}
-        <div className="absolute inset-0">
-          <img
-            src="/images/ALLENAMENTO-VASANELLO-07-2025/IMG-20250824-WA0062.jpg"
-            alt=""
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            ref={videoRef}
+            src="/video/hero.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F0D]/75 via-[#0A0F0D]/65 to-[#0A0F0D]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F0D]/70 via-[#0A0F0D]/60 to-[#0A0F0D]" />
         </div>
         <div className="absolute inset-0 bg-[#00A878]/3" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#00A878]/8 blur-[120px] pointer-events-none" />
@@ -71,8 +84,7 @@ export default function Home() {
             variants={fadeUp} initial="hidden" animate="visible" custom={2}
             className="text-lg sm:text-xl text-[#6B9E84] max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Maestro <strong className="text-[#D4AF37]">Pietro Cipriani</strong> — Cintura Oro 6° Duan · Karate, Kung Fu,
-            Tai Chi, Kurash. Oltre cinquant'anni di dedizione alle arti marziali tradizionali.
+            Maestro <strong className="text-[#D4AF37]">Pietro Cipriani</strong> — 7° Duan Wu-Shu Kung Fu · 4° Dan Karate · Maestro Tai Chi Chuan · Kurash 1 stella. Oltre cinquant'anni di dedizione alle arti marziali tradizionali.
           </motion.p>
 
           <motion.div
@@ -178,9 +190,9 @@ export default function Home() {
       {/* ── FOTO BANNER ────────────────────────── */}
       <section className="relative h-64 md:h-80 overflow-hidden">
         <img
-          src="/images/ALLENAMENTO-VASANELLO-07-2025/IMG-20250824-WA0038.jpg"
+          src="/images/ALLENAMENTO-VASANELLO-07-2025/IMG-20250824-WA0072.jpg"
           alt="Allenamento Scuola della Montagna Shan"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F0D]/90 via-[#0A0F0D]/65 to-[#0A0F0D]/20" />
         <div className="absolute inset-0 flex items-center">
@@ -218,8 +230,8 @@ non una destinazione.”
                   cinquant'anni che lo ha reso uno dei più rispettati nella Tuscia.
                 </p>
                 <p>
-                  <strong className="text-[#D4AF37]">Cintura Oro 6° Duan</strong> in Kung Fu Wushu. Medaglie ai Campionati
-                  Mondiali in Polonia con i suoi allievi. Formatore della Nazionale italiana di Karate.
+                  <strong className="text-[#D4AF37]">7° Duan di Wu-Shu Kung Fu</strong>, già Coordinatore Nazionale Us Acli.
+                  Maestro 4° Dan di Karate, Maestro 1 stella di Kurash, Maestro di Tai Chi Chuan.
                 </p>
                 <p>
                   Fondatore della <em className="text-[#9DC4B0]">Scuola della Montagna "Shan"</em>: la sintesi tra
@@ -238,10 +250,10 @@ non una destinazione.”
               className="space-y-4"
             >
               {[
-                { icon: Award, label: 'Cintura Oro 6° Duan — Kung Fu Wushu' },
-                { icon: Award, label: 'Maestro Karate Wado Ryu — 3° Dan' },
-                { icon: Award, label: 'Campione ai Mondiali di Kung Fu — Polonia' },
-                { icon: Users, label: 'Formatore della Nazionale Italiana Karate' },
+                { icon: Award, label: '7° Duan — Wu-Shu Kung Fu' },
+                { icon: Award, label: 'Maestro Karate Wado Ryu — 4° Dan' },
+                { icon: Award, label: 'Maestro di Tai Chi Chuan · Kurash 1 stella' },
+                { icon: Users, label: 'Già Coordinatore Nazionale Us Acli' },
                 { icon: Clock, label: 'Oltre 50 anni di insegnamento' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4 p-4 rounded-lg bg-[#111B16] border border-[#1E3028]">
