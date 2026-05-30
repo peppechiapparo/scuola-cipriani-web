@@ -22,7 +22,7 @@ export default function Footer() {
               Oltre 50 anni di tradizione nelle arti marziali. Karate, Kung Fu, Tai Chi, Kurash — Viterbo, Lazio.
             </p>
             <div className="flex gap-3 mt-5">
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/scuolacipriani" target="_blank" rel="noopener noreferrer"
                 className="w-8 h-8 rounded-full border border-[#1E3028] flex items-center justify-center text-[#6B9E84] hover:text-[#00A878] hover:border-[#00A878] transition-colors">
                 <Instagram className="w-4 h-4" />
               </a>
